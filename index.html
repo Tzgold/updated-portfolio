@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Global Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* Ensure background matches theme to prevent white flashes */
+        @apply bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-200 transition-colors duration-300;
+      }
+      
+      /* Enhance default focus outline */
+      :focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+      
+      /* Dark mode scrollbar support */
+      .dark {
+        color-scheme: dark;
+      }
+
+      /* Custom Scrollbar for a sleeker look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a3a3a3; /* Neutral 400 */
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #525252; /* Neutral 600 */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #737373;
+      }
+
+      /* 
+         Scroll Reveal Base Styles 
+         Using transitions is more performant than keyframe animations for scroll interactions.
+         will-change hints the browser to promote these elements to their own layer.
+      */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(20px); /* Reduced movement for subtler effect */
+        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: opacity, transform;
+      }
+      
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Initial header animation (immediate load) */
+      @keyframes slideDownFade {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-header {
+        animation: slideDownFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      /* Link Hover Animation */
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+      }
+
+      .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1.5px; /* Thinner line */
+        bottom: -2px; 
+        left: 0;
+        background-color: currentColor;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      .hover-underline-animation:hover::after,
+      .hover-underline-animation:focus-visible::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-neutral-50 dark:bg-[#050505] transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
