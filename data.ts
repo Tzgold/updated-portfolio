@@ -54,8 +54,8 @@ export const PROJECTS: ProjectItem[] = [
     {
     title: "Overlay AI",
     description: "Overlay reimagines how people use AI on the web. Instead of switching tabs or copying content, Overlay lets users invoke AI instantly over any webpage using a simple shortcut. The goal is to make AI feel invisible, fast, and naturally integrated into everyday browsing.",
-    image:"/images/overlay_ai.jpg",
-    logo: "/images/overlay_ai.jpg",
+    image:"/images/overlay.jpg",
+    logo: "/images/overlay.jpg",
     linkLive: "https://overlay-sable-three.vercel.app",
     linkSource: "https://github.com/Tzgold/overlay_ai",
     technologies: ["React", "TypeScript", "Node.js", "JavaScript"]
