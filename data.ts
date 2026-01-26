@@ -14,14 +14,15 @@ export const SOCIAL_LINKS = {
 export const BIO = {
   name: "Tequam Zework",
   title: "Full Stack Developer",
-  description: `My journey started when I was 17 years old when I wrote my first line of code in a terminal! Fast forward to today, and I've had the privilege of working at multiple start ups, an event organizing company, a huge corporation, campus clubs and handled government projects. My main focus these days is building modern, minimal and powerful products and digital experiences at Dream Intelligence for the world to explore.`
+  description: [`I am a passionate Full Stack Developer with over 4 years of experience in designing, building, and deploying responsive web and mobile applications. My expertise spans the full software development life cycle, from architectural design to deployment.`,
+   "I specialize in the MERN stack (MongoDB, Express, React, Node.js) and on Python and c++, have a strong command of modern frameworks like Next.js, React Native, and Flutter. I am dedicated to writing efficient, scalable code and delivering seamless user experiences that align with business objectives."
+  ]
 };
 
 export const ABOUT = {
   title: "About Me",
   paragraphs: [
-    "I am a passionate Full Stack Developer with over 4 years of experience in designing, building, and deploying responsive web and mobile applications. My expertise spans the full software development life cycle, from architectural design to deployment.",
-    "I specialize in the MERN stack (MongoDB, Express, React, Node.js) and on Python and c++, have a strong command of modern frameworks like Next.js, React Native, and Flutter. I am dedicated to writing efficient, scalable code and delivering seamless user experiences that align with business objectives."
+    "My journey started when I was 17 years old when I wrote my first line of code in a terminal! Fast forward to today, and I've had the privilege of working at multiple start ups, an event organizing company, a huge corporation, campus clubs and handled government projects. My main focus these days is building modern, minimal and powerful products and digital experiences at Dream Intelligence for the world to explore.",
   ]
 };
 
