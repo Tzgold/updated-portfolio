@@ -79,7 +79,7 @@ export const PROJECTS: ProjectItem[] = [
     technologies: ["React Native", "FastAPI", "Android Native Modules"]
   },
   {
-    title: "VerbaFlow",
+    title: "Overlay AI",
     description: "Real-time voice and text translation application supporting over 50 languages with offline capability. Built with React Native and custom ML models for low-latency on-device processing.",
     image:"/images/verbaflow1.jpg",
     logo: "/images/verbaflow1.jpg",
