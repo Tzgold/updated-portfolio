@@ -153,15 +153,17 @@ export const EXPERIENCE: TimelineItem[] = [
     ]
   },
   {
-    date: "Jan 2022 - Nov 2023",
-    title: "WebFex",
-    subtitle: "Full-stack Developer",
-    logo: "/images/webfex.jpg",
-    description: "WebFex is a crypto-focused platform created to help people trade, track, and understand digital assets more easily. We focus on simplicity, speed, and giving users clear insights into the crypto world.",
+    date: "Dec 2025 - present",
+    title: "Overlay",
+    subtitle: "Founder & Full-stack Developer",
+    logo: "/images/overlay.jpg",
+    description: "Overlay is a revolutionary platform that enhances web browsing by integrating AI seamlessly into the user experience. Instead of switching tabs or copying content, users can invoke AI instantly over any webpage using a simple shortcut.",
     bullets: [
-       "A simple and fast crypto platform built to make trading and asset tracking easier.",
-       "Real-time market insights and tools designed for smart decision-making.",
-       "Created by us to bring clarity, speed, and accessibility to the crypto world."
+      "A chrome extension that brings AI capabilities to any webpage.",
+      "you can invoke AI instantly over any webpage using a simple shortcut.",
+       "A simple and fast platform built to make web browsing easier.",
+       "Real-time insights and tools designed for smart decision-making.",
+       "Created by us to bring clarity, speed, and accessibility to the web."
     ]
   },
   {
