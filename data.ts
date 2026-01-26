@@ -80,7 +80,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "Overlay AI",
-    description: "Real-time voice and text translation application supporting over 50 languages with offline capability. Built with React Native and custom ML models for low-latency on-device processing.",
+    description: "Overlay reimagines how people use AI on the web. Instead of switching tabs or copying content, Overlay lets users invoke AI instantly over any webpage using a simple shortcut. The goal is to make AI feel invisible, fast, and naturally integrated into everyday browsing.",
     image:"/images/overlay_ai.jpg",
     logo: "/images/overlay_ai_logo.jpg",
     linkLive: "https://overlay-sable-three.vercel.app",
