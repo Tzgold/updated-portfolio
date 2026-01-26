@@ -51,6 +51,15 @@ export const CREATIVITY_ITEMS: CreativityItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
+    {
+    title: "Overlay AI",
+    description: "Overlay reimagines how people use AI on the web. Instead of switching tabs or copying content, Overlay lets users invoke AI instantly over any webpage using a simple shortcut. The goal is to make AI feel invisible, fast, and naturally integrated into everyday browsing.",
+    image:"/images/overlay_ai.jpg",
+    logo: "/images/overlay_ai.jpg",
+    linkLive: "https://overlay-sable-three.vercel.app",
+    linkSource: "https://github.com/Tzgold/overlay_ai",
+    technologies: ["React", "TypeScript", "Node.js", "JavaScript"]
+  },
   {
     title: "Wozena AI Automation",
     description: "Wozena AI Automation, a startup project my friend and I built from scratch! We designed the full website, making it a modern, aesthetic, and AI-powered platform for automating business workflows. Features include: AI strategy generator, AI chat assistant, and a booking calendar to connect with us.",
@@ -78,15 +87,7 @@ export const PROJECTS: ProjectItem[] = [
     linkSource: "https://github.com/Tzgold/garment-management",
     technologies: ["React Native", "FastAPI", "Android Native Modules"]
   },
-  {
-    title: "Overlay AI",
-    description: "Overlay reimagines how people use AI on the web. Instead of switching tabs or copying content, Overlay lets users invoke AI instantly over any webpage using a simple shortcut. The goal is to make AI feel invisible, fast, and naturally integrated into everyday browsing.",
-    image:"/images/overlay_ai.jpg",
-    logo: "/images/overlay_ai_logo.jpg",
-    linkLive: "https://overlay-sable-three.vercel.app",
-    linkSource: "https://github.com/Tzgold/overlay_ai",
-    technologies: ["React", "TypeScript", "Node.js", "JavaScript"]
-  },
+
   {
     title: "Roompulse",
     description: "A lightweight IoT system that monitors indoor temperature, humidity, and noise levels using low-cost sensors. Each sensor node transmits data to a central dashboard where users can view real-time readings, detect abnormal conditions, and track trends over time.",
