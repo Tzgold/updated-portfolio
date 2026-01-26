@@ -81,11 +81,11 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: "Overlay AI",
     description: "Real-time voice and text translation application supporting over 50 languages with offline capability. Built with React Native and custom ML models for low-latency on-device processing.",
-    image:"/images/verbaflow1.jpg",
-    logo: "/images/verbaflow1.jpg",
-    linkLive: "#",
-    linkSource: "https://github.com/Tzgold/verbaflow",
-    technologies: ["React Native", "TensorFlow Lite", "Node.js"]
+    image:"/images/overlay_ai.jpg",
+    logo: "/images/overlay_ai_logo.jpg",
+    linkLive: "https://overlay-sable-three.vercel.app",
+    linkSource: "https://github.com/Tzgold/overlay_ai",
+    technologies: ["React", "TypeScript", "Node.js", "JavaScript"]
   },
   {
     title: "Roompulse",
