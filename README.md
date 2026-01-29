@@ -53,44 +53,7 @@ npm run preview
 # or
 yarn preview
 ```
-
 Deploy to static hosts (Vercel, Netlify, GitHub Pages) by pointing to the output folder or using the platform's recommended deployment flow.
-
-## Changing images (profile / project logos)
-
-Two common, reliable ways to add/replace images:
-
-Option A — Use the public folder (recommended for static assets)
-- Put images into `public/images/` (create the folder if missing).
-- Reference them with absolute paths, e.g. `/images/profile3.jpg` or `/images/EXLP.png`.
-- Example path used in code: `<img src="/images/profile3.jpg" />`
-- After adding/replacing, restart the dev server and clear the browser cache if you still see the old image.
-
-PowerShell example to copy an image into the project:
-```powershell
-Copy-Item -Path "C:\path\to\EXLP.png" -Destination "C:\Users\Admin\Downloads\minimal-dark-portfolio (4)\public\images\EXLP.png" -Force
-```
-
-Option B — Import inside src (bundler-managed)
-- Place images inside `src/assets/` (or similar).
-- Import them in components or data files:
-```ts
-import profileImg from './assets/profile3.png';
-...
-<img src={profileImg} alt="Profile" />
-```
-- If TypeScript errors on image imports, add a declaration file (e.g. `src/globals.d.ts`):
-```ts
-declare module '*.png';
-declare module '*.jpg';
-declare module '*.svg';
-```
-
-Troubleshooting tips
-- Ensure exact file name (case-sensitive on some hosts).
-- If image not showing, check browser devtools network tab for 404.
-- Restart the dev server after adding files to `public` in some setups.
-- If importing images, ensure the bundler is configured to handle image assets.
 
 ## Project structure (overview)
 - src/
