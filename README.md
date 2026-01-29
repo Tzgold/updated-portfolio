@@ -102,9 +102,6 @@ Troubleshooting tips
   - images/ — static images served at /images/...
 - package.json, tailwind config, tsconfig, etc.
 
-## Contributing
-- Fixes and improvements welcome. Please open issues or PRs with focused changes.
-
 ## License
 MIT
 
