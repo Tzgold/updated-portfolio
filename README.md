@@ -45,8 +45,6 @@ Build for production:
 npm run build
 # or
 yarn build
-```
-for soe 
 
 Preview the production build:
 ```bash
