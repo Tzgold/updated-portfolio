@@ -65,8 +65,6 @@ Deploy to static hosts (Vercel, Netlify, GitHub Pages) by pointing to the output
   - images/ — static images served at /images/...
 - package.json, tailwind config, tsconfig, etc.
 
-## License
-MIT
 
 ## Contact
 Owner: Tequam Zework  
