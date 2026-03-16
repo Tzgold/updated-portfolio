@@ -1,4 +1,5 @@
-# Minimal Dark Portfolio
+# My new portfolio
+
 
 A minimal, dark themed personal portfolio built with React + TypeScript and Tailwind CSS. This repo contains a responsive single-page site showcasing bio, skills, projects, timeline, and contact links — ready to run locally or deploy.
 
