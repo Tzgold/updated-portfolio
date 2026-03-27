@@ -28,8 +28,9 @@ const TimelineCard: React.FC<Props> = ({ item, isLast }) => {
       {/* Added tabIndex to allow keyboard focus, and focus styles matching hover */}
       <div 
         tabIndex={0}
-        className="ml-2 mb-12 p-5 -m-5 rounded-2xl transition-all duration-300 hover:scale-[1.02] focus:scale-[1.02] hover:bg-white dark:hover:bg-neutral-900/40 focus:bg-white dark:focus:bg-neutral-900/40 bg-white/40 dark:bg-neutral-900/10 backdrop-blur-sm hover:shadow-xl hover:shadow-neutral-200/20 focus:shadow-xl dark:shadow-[0_0_15px_rgba(255,255,255,0.02)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.06)] dark:focus:shadow-[0_0_25px_rgba(255,255,255,0.06)] border border-neutral-300 dark:border-white/10 hover:border-neutral-400 dark:hover:border-white/30 focus:border-neutral-400 dark:focus:border-white/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 dark:focus-visible:ring-neutral-400"
+        className="relative isolate ml-2 mb-12 p-5 -m-5 rounded-2xl transition-all duration-500 hover:scale-[1.02] focus:scale-[1.02] hover:bg-white dark:hover:bg-neutral-900/45 focus:bg-white dark:focus:bg-neutral-900/45 bg-white/55 dark:bg-neutral-900/15 backdrop-blur-md hover:shadow-xl hover:shadow-neutral-200/30 focus:shadow-xl dark:shadow-[0_0_15px_rgba(255,255,255,0.02)] dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.08)] dark:focus:shadow-[0_0_30px_rgba(255,255,255,0.08)] border border-neutral-300 dark:border-white/10 hover:border-neutral-400 dark:hover:border-white/30 focus:border-neutral-400 dark:focus:border-white/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 dark:focus-visible:ring-neutral-400"
       > 
+        <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-within:opacity-100 bg-[radial-gradient(circle_at_top,rgba(115,115,115,0.12),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_55%)]" />
         <div className="flex items-center gap-4 mb-2">
           {item.logo && (
              // eslint-disable-next-line

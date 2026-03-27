@@ -65,7 +65,8 @@ const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
       )}
       
       {/* Hoverable Card Container - Enhanced Lift & Soft Glow */}
-      <div className="flex gap-8 relative p-6 -ml-6 rounded-2xl transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-focus-within:-translate-y-1.5 hover:bg-white dark:hover:bg-neutral-900/30 group-focus-within:bg-white dark:group-focus-within:bg-neutral-900/30 bg-white/40 dark:bg-neutral-900/10 backdrop-blur-md shadow-sm hover:shadow-xl hover:shadow-neutral-200/30 dark:hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.05)] group-focus-within:shadow-xl dark:group-focus-within:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.05)] border border-neutral-300 dark:border-white/10 hover:border-neutral-400 dark:hover:border-white/20 group-focus-within:border-neutral-400 dark:group-focus-within:border-white/20">
+      <div className="flex gap-8 relative p-6 -ml-6 rounded-2xl transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-focus-within:-translate-y-1.5 hover:bg-white dark:hover:bg-neutral-900/35 group-focus-within:bg-white dark:group-focus-within:bg-neutral-900/35 bg-white/50 dark:bg-neutral-900/15 backdrop-blur-md shadow-sm hover:shadow-xl hover:shadow-neutral-200/30 dark:hover:shadow-[0_10px_45px_-10px_rgba(255,255,255,0.07)] group-focus-within:shadow-xl dark:group-focus-within:shadow-[0_10px_45px_-10px_rgba(255,255,255,0.07)] border border-neutral-300 dark:border-white/10 hover:border-neutral-400 dark:hover:border-white/20 group-focus-within:border-neutral-400 dark:group-focus-within:border-white/20">
+        <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-within:opacity-100 bg-[radial-gradient(circle_at_15%_0%,rgba(115,115,115,0.15),transparent_42%)] dark:bg-[radial-gradient(circle_at_15%_0%,rgba(255,255,255,0.14),transparent_42%)]" />
         
         {/* Visual Asset (Image or Icon) */}
         <div className="shrink-0 z-10">
@@ -107,7 +108,7 @@ const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
               {item.technologies.map((tech, idx) => (
                 <span 
                   key={idx} 
-                  className="px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-500 group-hover:border-neutral-400 dark:group-hover:border-neutral-600 transition-colors"
+                  className="px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold rounded-md border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-500 group-hover:border-neutral-400 dark:group-hover:border-neutral-600 transition-all duration-300 group-hover:-translate-y-0.5"
                 >
                   {tech}
                 </span>
@@ -121,7 +122,7 @@ const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
                 href={item.linkLive} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-xs font-medium hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-neutral-800 transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:border-white focus-visible:bg-white dark:focus-visible:bg-neutral-800"
+                className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-xs font-medium hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-neutral-800 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:border-white focus-visible:bg-white dark:focus-visible:bg-neutral-800"
               >
                 <Icon name="ExternalLink" size={13} />
                 View Live
@@ -132,7 +133,7 @@ const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
                 href={item.linkSource} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-xs font-medium hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-neutral-800 transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:border-white focus-visible:bg-white dark:focus-visible:bg-neutral-800"
+                className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 text-xs font-medium hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-neutral-800 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 focus-visible:border-white focus-visible:bg-white dark:focus-visible:bg-neutral-800"
               >
                 <Icon name="Code" size={13} />
                 Source Code

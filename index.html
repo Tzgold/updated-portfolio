@@ -34,6 +34,25 @@
         /* Ensure background matches theme to prevent white flashes */
         @apply bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-200 transition-colors duration-300;
       }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(to right, rgba(115, 115, 115, 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(115, 115, 115, 0.06) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: radial-gradient(circle at center, black 28%, transparent 85%);
+        -webkit-mask-image: radial-gradient(circle at center, black 28%, transparent 85%);
+        z-index: -2;
+      }
+      .dark body::before {
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      }
       
       /* Enhance default focus outline */
       :focus-visible {
@@ -71,14 +90,32 @@
       */
       .reveal-on-scroll {
         opacity: 0;
-        transform: translateY(20px); /* Reduced movement for subtler effect */
-        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform: translateY(24px) scale(0.99);
+        filter: blur(2px);
+        transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
         will-change: opacity, transform;
       }
       
       .reveal-on-scroll.is-visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      .section-surface {
+        position: relative;
+        border: 1px solid rgba(163, 163, 163, 0.35);
+        border-radius: 20px;
+        padding: 1.25rem;
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 35px -24px rgba(23, 23, 23, 0.35);
+      }
+
+      .dark .section-surface {
+        border-color: rgba(255, 255, 255, 0.12);
+        background: rgba(10, 10, 10, 0.32);
+        box-shadow: 0 20px 50px -35px rgba(255, 255, 255, 0.22);
       }
 
       /* Initial header animation (immediate load) */

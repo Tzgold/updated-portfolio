@@ -84,6 +84,7 @@ const StaggerContainer: React.FC<{ children: (isVisible: boolean) => React.React
 const App: React.FC = () => {
   const [isDark, setIsDark] = React.useState(true);
   const [profileImgError, setProfileImgError] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   React.useEffect(() => {
     if (isDark) {
@@ -92,6 +93,19 @@ const App: React.FC = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
+
+  React.useEffect(() => {
+    const handleScrollProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScrollProgress, { passive: true });
+    handleScrollProgress();
+    return () => window.removeEventListener('scroll', handleScrollProgress);
+  }, []);
 
   const toggleTheme = () => setIsDark(!isDark);
 
@@ -107,6 +121,17 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-neutral-900 selection:bg-neutral-200 selection:text-black dark:text-neutral-200 dark:selection:bg-neutral-800 dark:selection:text-white transition-colors duration-300">
+      <div className="fixed left-0 top-0 z-50 h-[2px] w-full bg-transparent">
+        <div
+          className="h-full bg-neutral-700 dark:bg-neutral-200 shadow-[0_0_14px_rgba(0,0,0,0.2)] dark:shadow-[0_0_14px_rgba(255,255,255,0.35)] transition-[width] duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-20 -left-16 h-72 w-72 rounded-full bg-neutral-200/40 blur-3xl dark:bg-white/[0.05]" />
+        <div className="absolute top-[35%] -right-24 h-80 w-80 rounded-full bg-neutral-300/30 blur-3xl dark:bg-white/[0.04]" />
+        <div className="absolute -bottom-24 left-1/3 h-72 w-72 rounded-full bg-neutral-200/30 blur-3xl dark:bg-white/[0.03]" />
+      </div>
       <div className="max-w-3xl mx-auto px-6 py-24 relative">
         
         {/* Theme Toggle */}
@@ -174,7 +199,7 @@ const App: React.FC = () => {
         </header>
 
         {/* Creativity Section with Staggered Cards */}
-        <section id="creativity" className="mb-32">
+        <section id="creativity" className="mb-32 section-surface">
           <RevealOnScroll>
             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-8 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Creativity</h2>
           </RevealOnScroll>
@@ -196,7 +221,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="mb-32">
+        <section id="skills" className="mb-32 section-surface">
             <RevealOnScroll>
              <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-8 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">
                 Skills
@@ -221,7 +246,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="mb-32">
+        <section id="experience" className="mb-32 section-surface">
           <RevealOnScroll>
              <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Experience</h2>
           </RevealOnScroll>
@@ -238,7 +263,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="mb-32">
+        <section id="education" className="mb-32 section-surface">
           <RevealOnScroll>
              <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Education</h2>
           </RevealOnScroll>
@@ -255,7 +280,7 @@ const App: React.FC = () => {
         </section>
 
         {/* AI/ML Projects Section */}
-        <section id="projects" className="mb-32">
+        <section id="projects" className="mb-32 section-surface">
           <RevealOnScroll>
             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Projects</h2>
           </RevealOnScroll>
@@ -272,7 +297,7 @@ const App: React.FC = () => {
         </section>
 
         {/* About Me Section */}
-        <section id="about" className="mb-32">
+        <section id="about" className="mb-32 section-surface">
             <RevealOnScroll>
                 <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-8 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">
                     {ABOUT.title}
