@@ -138,6 +138,17 @@ export const EDUCATION: TimelineItem[] = [
 
 export const EXPERIENCE: TimelineItem[] = [
   {
+    date: "Dec 2025 - Mar 2026",
+    title: "GLYYD",
+    subtitle: "React & Three.js Developer",
+    description: "Worked on GLYYD, a platform for student rowers to monitor and analyze performance. Developed interactive Three.js graphs that visualize rowing metrics, including power output and overall performance, giving coaches and students clear, actionable insights. Built these visualizations in React to ensure smooth, responsive, and data-driven user experiences. Link: https://glyyd.com",
+    bullets: [
+      "Created dynamic 3D graphs showing rowers' performance and power analysis.",
+      "Enabled intuitive visualization of complex data for performance tracking and coaching decisions.",
+      "Contributed to front-end development by integrating real-time data updates and interactive elements."
+    ]
+  },
+  {
     date: "July 2025 - Present",
     title: "Wozena AI Automation",
     subtitle: "Full Stack Dev and Co-founder",
