@@ -138,9 +138,24 @@ export const EDUCATION: TimelineItem[] = [
 
 export const EXPERIENCE: TimelineItem[] = [
   {
+    date: "Dec 2025 - present",
+    title: "Overlay",
+    subtitle: "Founder & Full-stack Developer",
+    logo: "/images/overlay.jpg",
+    description: "Overlay is a revolutionary platform that enhances web browsing by integrating AI seamlessly into the user experience. Instead of switching tabs or copying content, users can invoke AI instantly over any webpage using a simple shortcut.",
+    bullets: [
+      "A chrome extension that brings AI capabilities to any webpage.",
+      "you can invoke AI instantly over any webpage using a simple shortcut.",
+       "A simple and fast platform built to make web browsing easier.",
+       "Real-time insights and tools designed for smart decision-making.",
+       "Created by us to bring clarity, speed, and accessibility to the web."
+    ]
+  },
+  {
     date: "Dec 2025 - Mar 2026",
     title: "GLYYD",
     subtitle: "React & Three.js Developer",
+    logo: "/images/glyyd.png",
     description: "Worked on GLYYD, a platform for student rowers to monitor and analyze performance. Developed interactive Three.js graphs that visualize rowing metrics, including power output and overall performance, giving coaches and students clear, actionable insights. Built these visualizations in React to ensure smooth, responsive, and data-driven user experiences. Link: https://glyyd.com",
     bullets: [
       "Created dynamic 3D graphs showing rowers' performance and power analysis.",
@@ -162,20 +177,6 @@ export const EXPERIENCE: TimelineItem[] = [
          "Focused on modern, minimal, and user-friendly design for optimal user experience.",
          "Collaborated with a co-founder to plan, design, and launch the platform successfully.",
          "Ensured scalability and reliability of the platform for future growth."
-    ]
-  },
-  {
-    date: "Dec 2025 - present",
-    title: "Overlay",
-    subtitle: "Founder & Full-stack Developer",
-    logo: "/images/overlay.jpg",
-    description: "Overlay is a revolutionary platform that enhances web browsing by integrating AI seamlessly into the user experience. Instead of switching tabs or copying content, users can invoke AI instantly over any webpage using a simple shortcut.",
-    bullets: [
-      "A chrome extension that brings AI capabilities to any webpage.",
-      "you can invoke AI instantly over any webpage using a simple shortcut.",
-       "A simple and fast platform built to make web browsing easier.",
-       "Real-time insights and tools designed for smart decision-making.",
-       "Created by us to bring clarity, speed, and accessibility to the web."
     ]
   },
   {
