@@ -220,17 +220,17 @@ const App: React.FC = () => {
           </StaggerContainer>
         </section>
 
-        {/* AI/ML Projects Section */}
-        <section id="projects" className="mb-32">
+        {/* Experience Section */}
+        <section id="experience" className="mb-32">
           <RevealOnScroll>
-            <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Projects</h2>
+             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Experience</h2>
           </RevealOnScroll>
-          <div className="space-y-10">
-            {PROJECTS.map((item, index) => (
+          <div className="ml-3 space-y-4">
+            {EXPERIENCE.map((item, index) => (
               <RevealOnScroll key={index} delay={index * 100}>
-                <ProjectCard 
+                <TimelineCard 
                     item={item} 
-                    isLast={index === PROJECTS.length - 1} 
+                    isLast={index === EXPERIENCE.length - 1} 
                 />
               </RevealOnScroll>
             ))}
@@ -254,17 +254,17 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="mb-32">
+        {/* AI/ML Projects Section */}
+        <section id="projects" className="mb-32">
           <RevealOnScroll>
-             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Experience</h2>
+            <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Projects</h2>
           </RevealOnScroll>
-          <div className="ml-3 space-y-4">
-            {EXPERIENCE.map((item, index) => (
+          <div className="space-y-10">
+            {PROJECTS.map((item, index) => (
               <RevealOnScroll key={index} delay={index * 100}>
-                <TimelineCard 
+                <ProjectCard 
                     item={item} 
-                    isLast={index === EXPERIENCE.length - 1} 
+                    isLast={index === PROJECTS.length - 1} 
                 />
               </RevealOnScroll>
             ))}
