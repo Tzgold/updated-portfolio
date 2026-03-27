@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from './Icons';
 import { ProjectItem } from '../types';
 
@@ -8,54 +8,12 @@ interface Props {
 }
 
 const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Reset error state if image source changes
     setImageError(false);
   }, [item.image]);
-
-  useEffect(() => {
-    if (!item.image || imageError) return;
-
-    let rafId: number;
-
-    const handleScroll = () => {
-      // Use requestAnimationFrame for performance
-      rafId = requestAnimationFrame(() => {
-        const element = parallaxRef.current;
-        if (!element) return;
-
-        const rect = element.parentElement?.getBoundingClientRect();
-        if (!rect) return;
-
-        const viewportHeight = window.innerHeight;
-
-        // Only calculate if the element is in or near the viewport
-        if (rect.top < viewportHeight && rect.bottom > 0) {
-          const windowCenter = viewportHeight / 2;
-          const elementCenter = rect.top + rect.height / 2;
-          
-          // Calculate offset based on distance from center
-          // Reduced factor to 0.03 to ensure the image (h-140%) stays covering the container (h-100%)
-          // Max scroll distance approx 500px * 0.03 = 15px offset. 
-          // Buffer is 20% of 100px = 20px per side. 15px < 20px, so no gaps.
-          const offset = (elementCenter - windowCenter) * -0.03; 
-          
-          element.style.transform = `translateY(${offset}px)`;
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial calculation
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      cancelAnimationFrame(rafId);
-    };
-  }, [item.image, imageError]);
 
   return (
     <div className="relative group">
@@ -70,15 +28,15 @@ const ProjectCard: React.FC<Props> = ({ item, isLast }) => {
         
         {/* Visual Asset (Image or Icon) */}
         <div className="shrink-0 z-10">
-          <div className="w-[100px] h-[100px] rounded-xl bg-neutral-100 dark:bg-neutral-900/80 border border-neutral-300 dark:border-neutral-700 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-neutral-400 dark:group-hover:border-white/30 dark:group-hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] group-focus-within:border-neutral-400 dark:group-focus-within:border-white/30 shadow-sm relative isolate group-hover:scale-105 group-focus-within:scale-105">
+          <div className="w-[116px] h-[116px] rounded-2xl bg-neutral-100 dark:bg-neutral-900/85 border border-neutral-300 dark:border-neutral-700 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-neutral-400 dark:group-hover:border-white/30 dark:group-hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] group-focus-within:border-neutral-400 dark:group-focus-within:border-white/30 shadow-sm relative isolate group-hover:scale-[1.03] group-focus-within:scale-[1.03] p-1">
             {item.image && !imageError ? (
-               <div ref={parallaxRef} className="absolute inset-x-0 -top-[20%] h-[140%] w-full will-change-transform">
+               <div className="absolute inset-0">
                   {/* eslint-disable-next-line */}
                   <img 
                     src={item.image} 
                     alt={item.title} 
                     onError={() => setImageError(true)}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 group-focus-within:scale-110" 
+                    className="w-full h-full object-cover object-center rounded-xl transition-transform duration-700 ease-out group-hover:scale-105 group-focus-within:scale-105" 
                   />
                   {/* Subtle overlay on hover */}
                   <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/5 dark:group-hover:bg-white/10 transition-colors duration-500 pointer-events-none mix-blend-overlay" />

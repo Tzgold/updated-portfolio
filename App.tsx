@@ -154,14 +154,15 @@ const App: React.FC = () => {
         <header className="mb-28 animate-header">
             <div className="flex flex-col md:flex-row gap-10 items-start">
                  {/* Avatar */}
-                 <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-full bg-neutral-200 dark:bg-neutral-900 overflow-hidden border border-neutral-300 dark:border-white/20 shadow-sm relative group flex items-center justify-center">
+                 <div className="w-36 h-36 md:w-48 md:h-48 shrink-0 rounded-2xl bg-neutral-200 dark:bg-neutral-900 overflow-hidden border-2 border-neutral-300 dark:border-white/25 shadow-[0_18px_45px_-20px_rgba(23,23,23,0.65)] dark:shadow-[0_18px_55px_-20px_rgba(255,255,255,0.45)] relative group flex items-center justify-center ring-8 ring-white/45 dark:ring-white/[0.06]">
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 dark:group-hover:bg-white/5 transition-colors duration-300 pointer-events-none z-10" />
+                    <div className="absolute -inset-1 rounded-2xl bg-[conic-gradient(from_120deg,rgba(115,115,115,0.35),transparent,rgba(115,115,115,0.2))] dark:bg-[conic-gradient(from_120deg,rgba(255,255,255,0.32),transparent,rgba(255,255,255,0.16))] blur-md opacity-70 -z-10" />
                     {!profileImgError ? (
                         <img 
                             src="/images/profile3.jpg" 
                             alt="Profile" 
                             onError={() => setProfileImgError(true)}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                         />
                     ) : (
                         <div className="flex items-center justify-center w-full h-full bg-neutral-100 dark:bg-neutral-800 text-neutral-400 dark:text-neutral-500">
@@ -172,10 +173,17 @@ const App: React.FC = () => {
 
                  <div className="flex-1 pt-2">
                      
-                     <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white mb-2">{BIO.name}</h1>
-                     <p className="text-lg text-neutral-500 dark:text-neutral-400 mb-6 font-medium tracking-tight">{BIO.title}</p>
+                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-2 leading-[1.05]">
+                        <span className="bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-200 dark:to-white bg-clip-text text-transparent">
+                          {BIO.name}
+                        </span>
+                     </h1>
+                     <p className="inline-flex items-center gap-2 text-sm md:text-base text-neutral-600 dark:text-neutral-300 mb-6 font-semibold tracking-wide px-3 py-1 rounded-full border border-neutral-300 dark:border-white/15 bg-white/60 dark:bg-neutral-900/45">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.65)]" />
+                        {BIO.title}
+                     </p>
                      
-                     <p className="text-base leading-7 text-neutral-700 dark:text-neutral-300 mb-8 max-w-xl text-pretty">
+                     <p className="text-base leading-8 text-neutral-700 dark:text-neutral-300 mb-8 w-full max-w-2xl text-pretty">
                         {BIO.description}
                      </p>
                      
@@ -262,23 +270,6 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="mb-32 section-surface">
-          <RevealOnScroll>
-             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Education</h2>
-          </RevealOnScroll>
-          <div className="ml-3 space-y-4">
-            {EDUCATION.map((item, index) => (
-              <RevealOnScroll key={index} delay={index * 100}>
-                <TimelineCard 
-                    item={item} 
-                    isLast={index === EDUCATION.length - 1} 
-                />
-              </RevealOnScroll>
-            ))}
-          </div>
-        </section>
-
         {/* AI/ML Projects Section */}
         <section id="projects" className="mb-32 section-surface">
           <RevealOnScroll>
@@ -290,6 +281,23 @@ const App: React.FC = () => {
                 <ProjectCard 
                     item={item} 
                     isLast={index === PROJECTS.length - 1} 
+                />
+              </RevealOnScroll>
+            ))}
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" className="mb-32 section-surface">
+          <RevealOnScroll>
+             <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mb-12 border-l-[3px] border-neutral-300 dark:border-white/20 pl-4 py-1">Education</h2>
+          </RevealOnScroll>
+          <div className="ml-3 space-y-4">
+            {EDUCATION.map((item, index) => (
+              <RevealOnScroll key={index} delay={index * 100}>
+                <TimelineCard 
+                    item={item} 
+                    isLast={index === EDUCATION.length - 1} 
                 />
               </RevealOnScroll>
             ))}
